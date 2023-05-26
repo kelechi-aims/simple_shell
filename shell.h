@@ -52,7 +52,7 @@ typedef struct liststr
 } list_t;
 
 /**
- * struct passinfo - contains pseudo-arguements to pass into a function,
+ * struct info_s - contains pseudo-arguements to pass into a function,
  * allowing uniform prototype for function pointer struct
  * @arg: a string generated from getline containing arguements
  * @argv:an array of strings generated from arg
@@ -73,7 +73,7 @@ typedef struct liststr
  * @readfd: the fd from which to read line input
  * @histcount: the history line number count
  */
-typedef struct passinfo
+typedef struct info_s
 {
 	char *arg;
 	char **argv;
@@ -101,11 +101,11 @@ typedef struct passinfo
 	0, 0, 0}
 
 /**
- * struct builtin - contains a builtin string and related function
+ * struct builtin_s - contains a builtin string and related function
  * @type: the builtin command flag
  * @func: the function
  */
-typedef struct builtin
+typedef struct builtin_s
 {
 	char *type;
 	int (*func)(info_t *);
@@ -168,13 +168,13 @@ char *convert_number(long int, int, int);
 void remove_comments(char *);
 
 /* builtin_cmd.c file*/
-int handle_exit(info_t *);
-int handle_cd(info_t *);
-int handle_help(info_t *);
+int sh_exit(info_t *);
+int sh_cd(info_t *);
+int sh_help(info_t *);
 
 /* builtin_cmd.c file */
-int handle_history(info_t *);
-int handle_alias(info_t *);
+int sh_history(info_t *);
+int sh_alias(info_t *);
 
 /* _getline.c file */
 ssize_t get_input(info_t *);

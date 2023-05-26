@@ -24,14 +24,14 @@ static int find_builtin(info_t *info)
 {
 	int i, built_in_ret = -1;
 	builtin_table builtintbl[] = {
-		{"exit", handle_exit},
+		{"exit", sh_exit},
 		{"env", handle_env},
-		{"help", handle_help},
-		{"history", handle_history},
+		{"help", sh_help},
+		{"history", sh_history},
 		{"setenv", handle_setenv},
 		{"unsetenv", handle_unsetenv},
-		{"cd", handle_cd},
-		{"alias", handle_alias},
+		{"cd", sh_cd},
+		{"alias", sh_alias},
 		{NULL, NULL}
 	};
 
