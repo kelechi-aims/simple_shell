@@ -1,76 +1,77 @@
 #include "shell.h"
 
-
 /**
- * _strncpy - copies a string
- * @dest: the destination string to be copied to
- * @src: the source string
- * @n: the amount of characters to be copied
- * Return: the concatenated string
+ * *_strncpy - copies a string
+ * @dest: string that the src string is append to
+ * @src: string that is append to the dest string
+ * @n: miximum number of byte from src
+ *
+ * Return: dest
  */
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
-	char *s = dest;
 
-	i = 0;
-	while (i < n - 1 && src[i] != '\0')
+	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
-		i++;
 	}
-	if (i < n)
+	for (; i < n; i++)
 	{
-		int j = i;
-
-		while (j < n)
-		{
-			dest[j] = '\0';
-			j++;
-		}
+		dest[i] = '\0';
 	}
-	return (s);
+	return (dest);
 }
 
 /**
  * *_strncat - concatenates two strings
- * @dest: the first string
- * @src: the second string
- * @n: the amount of bytes to be maximally used
- * Return: the concatenated string
+ * @dest: string where src string is append to
+ * @src: string that is append to the dest string
+ * @n: third parameter and an integer
+ *
+ * Return: dest
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
-	char *s = dest;
+	int destlen = 0, srclen = 0;
 
-	i = 0;
-	j = 0;
-	while (dest[i] != '\0')
-	i++;
-	while (j < n && src[j] != '\0')
+	while (dest[destlen] != '\0')
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		destlen++;
 	}
-	if (j < n)
-		dest[i] = '\0';
-	return (s);
+	while (srclen < n)
+	{
+		dest[destlen] = src[srclen];
+		if (src[srclen] == '\0')
+		{
+			break;
+		}
+		destlen++;
+		srclen++;
+	}
+	return (dest);
 }
-
 /**
  * *_strchr - locates a character in a string
- * @s: the string to be parsed
- * @c: the character to look for
- * Return: (s) a pointer to the memory area s
+ * @s: string character
+ * @c: character to locate
+ * Return: a pointer or null
  */
 char *_strchr(char *s, char c)
 {
-	do {
-		if (*s == c)
-		return (s);
-	} while (*s++ != '\0');
+	unsigned int i;
 
-	return (NULL);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == c)
+		{
+			return (s + i);
+		}
+	}
+	if (s[i] == c)
+	{
+		return (s + i);
+	}
+	return ('\0');
 }

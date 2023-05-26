@@ -2,9 +2,9 @@
 
 /**
 * _memset - fills memory with a constant byte
-* @s: the pointer to the memory area
-* @b: the byte to fill *s with
-* @n: the amount of bytes to be filled
+* @s: the pointer to the destination s
+* @b: the source byte to fill *s with
+* @n: the amount of bytes filled
 *
 * Return: (s) a pointer to the memory area s
 */
@@ -64,3 +64,4 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	free(ptr);
 	return (p);
 }
+

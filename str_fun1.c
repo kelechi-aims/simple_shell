@@ -1,50 +1,48 @@
 #include "shell.h"
 
 /**
-* _strcpy - copies a string
-* @dest: the destination
-* @src: the source
-*
-* Return: pointer to destination
-*/
-
+ * *_strcpy - copies the string pointed to by src, including
+ * the terminating null byte (\0), to the buffer to by dest
+ * @dest: First parameter of the function
+ * @src: second parameter of the function
+ *
+ * Return: the pointer to dest
+ */
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
 
-	if (dest == src || src == 0)
-		return (dest);
-	while (src[i])
+	for (; src[i] != '\0'; i++)
 	{
 		dest[i] = src[i];
-		i++;
 	}
-	dest[i] = 0;
+	dest[i] = '\0';
 	return (dest);
 }
 
 /**
-* _strdup - duplicates a string
-* @str: the string to duplicate
-*
-* Return: pointer to the duplicated string
-*/
-
+ *_strdup - returns a pointer to a newly allocated space in memory,
+ * which contains a copy of the string given as a parameter
+ * @str: string parameter
+ * Return: a pointer or NULL
+ */
 char *_strdup(const char *str)
 {
-	int length = 0;
-	char *ret;
+	unsigned int len;
+	char *newstr;
 
 	if (str == NULL)
+	{
 		return (NULL);
-	while (*str++)
-		length++;
-	ret = malloc(sizeof(char) * (length + 1));
-	if (!ret)
+	}
+	len = strlen(str) + 1;
+	newstr = malloc(sizeof(char) * len);
+	if (newstr == NULL)
+	{
 		return (NULL);
-	for (length++; length--;)
-		ret[length] = *--str;
-	return (ret);
+	}
+	strcpy(newstr, str);
+	return (newstr);
 }
 
 /**
@@ -73,7 +71,6 @@ void _puts(char *str)
 * Return: On success 1.
 * On error, -1 is returned, and errno is set appropriately.
 */
-
 int _putchar(char c)
 {
 	static int i;

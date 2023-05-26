@@ -9,14 +9,13 @@
 */
 int _strlen(char *s)
 {
-	int i = 0;
+	int len = 0;
 
-	if (!s)
-		return (0);
-
-	while (*s++)
-		i++;
-	return (i);
+	while (s[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
 }
 
 /**
@@ -28,17 +27,18 @@ int _strlen(char *s)
 */
 int _strcmp(char *s1, char *s2)
 {
-	while (*s1 && *s2)
+	int i = 0, diff = 0;
+
+	while (diff == 0)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
+		if (s1[i] == '\0' && s2[i] == '\0')
+		{
+			break;
+		}
+		diff = s1[i] - s2[i];
+		i++;
 	}
-	if (*s1 == *s2)
-		return (0);
-	else
-		return (*s1 < *s2 ? -1 : 1);
+	return (diff);
 }
 
 /**
@@ -65,12 +65,21 @@ char *starts_with(const char *haystack, const char *needle)
 */
 char *_strcat(char *dest, char *src)
 {
-	char *ret = dest;
+	int destlen = 0, srclen = 0;
 
-	while (*dest)
-		dest++;
-	while (*src)
-		*dest++ = *src++;
-	*dest = *src;
-	return (ret);
+	while (dest[destlen] != '\0')
+	{
+		destlen++;
+	}
+	while (srclen >= 0)
+	{
+		dest[destlen] = src[srclen];
+		if (src[srclen] == '\0')
+		{
+			break;
+		}
+		destlen++;
+		srclen++;
+	}
+	return (dest);
 }
