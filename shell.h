@@ -113,10 +113,6 @@ typedef struct builtin
 
 
 /* looper.c */
-static int interactive(info_t *info);
-static int find_builtin(info_t *info);
-static void fork_cmd(info_t *info);
-static void find_cmd(info_t *info);
 int hsh(info_t *info, char **av);
 
 /* find_path.c */
@@ -206,7 +202,6 @@ int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
 
 /* info.c file */
-static char *get_history_file(info_t *info);
 int write_history(info_t *info);
 int read_history(info_t *info);
 int build_history_list(info_t *info, char *buf, int linecount);
