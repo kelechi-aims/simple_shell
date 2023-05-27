@@ -52,26 +52,26 @@ typedef struct liststr
 } list_t;
 
 /**
- * struct info_s - contains pseudo-arguements to pass into a function,
- * allowing uniform prototype for function pointer struct
- * @arg: a string generated from getline containing arguements
- * @argv:an array of strings generated from arg
- * @path: a string path for the current command
- * @argc: the argument count
- * @line_count: the error count
- * @err_num: the error code for exit()s
+ * struct info_s - this contains pseudo-arguments to pass into a function,
+ * allowing a uniform prototype for function pointer struct
+ * @arg: It's a string generated from getline containing arguments
+ * @argv: It's an array of strings generated from arg
+ * @path: It's a string path for the current command
+ * @argc: It's the argument count
+ * @line_count: It's the error count
+ * @err_num: It's the error code for exit()s
  * @linecount_flag: if on count this line of input
  * @fname: the program filename
  * @env: linked list local copy of environ
  * @environ: custom modified copy of environ from LL env
- * @history: the history node
- * @alias: the alias node
+ * @history: It's the history node
+ * @alias: It's the alias node
  * @env_changed: on if environ was changed
- * @status: the return status of the last exec'd command
- * @cmd_buf: address of pointer to cmd_buf, on if chaining
+ * @status: It's the return status of the last executed command
+ * @cmd_buf: The address of pointer to cmd_buf, on if chaining
  * @cmd_buf_type: CMD_type ||, &&, ;
  * @readfd: the fd from which to read line input
- * @histcount: the history line number count
+ * @histcount: It's the history line number count
  */
 typedef struct info_s
 {
@@ -101,7 +101,7 @@ typedef struct info_s
 	0, 0, 0}
 
 /**
- * struct builtin_s - contains a builtin string and related function
+ * struct builtin_s - It contains a builtin string and related function
  * @type: the builtin command flag
  * @func: the function
  */
