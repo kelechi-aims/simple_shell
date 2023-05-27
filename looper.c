@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * interactive - returns true if shell is interactive mode
+ * interactive - it returns true if shell is in interactive mode
  * @info: struct address
  *
  * Return: 1 if interactive mode, 0 otherwise
@@ -12,7 +12,7 @@ static int interactive(info_t *info)
 }
 
 /**
-* find_builtin - finds a builtin command
+* find_builtin - finds a builtin command successfully
 * @info: the parameter & return info struct
 *
 * Return: -1 if builtin not found,
@@ -46,8 +46,8 @@ static int find_builtin(info_t *info)
 }
 
 /**
-* fork_cmd - forks a an exec thread to run cmd
-* @info: the parameter & return info struct
+* fork_cmd - forks an exec thread to run cmd
+* @info: parameter & return info struct
 *
 * Return: void
 */
@@ -84,8 +84,8 @@ static void fork_cmd(info_t *info)
 }
 
 /**
-* find_cmd - finds a command in PATH
-* @info: the parameter & return info struct
+* find_cmd - it finds a command in PATH
+* @info: parameter & return info struct
 *
 * Return: void
 */
@@ -126,7 +126,7 @@ static void find_cmd(info_t *info)
 }
 
 /**
-* hsh - main shell loop
+* hsh - the main shell loop
 * @info: the parameter & return info struct
 * @av: the argument vector from main()
 *
