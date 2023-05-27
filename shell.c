@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * main - Entry point of the command line interpreter
- * @agc: argument counter
- * @agv: arguments vector
+ * main - the entry point of the command line interpreter
+ * @agc: the argument counter
+ * @agv: the arguments vector
  * Return: 0 on success
  */
 int main(int agc, char **agv)
