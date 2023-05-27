@@ -1,9 +1,8 @@
 #include "shell.h"
 
 /**
- * handle_env - prints the current environment
- * @info: Structure containing potential arguments. Used to maintain
- * constant function prototype.
+ * handle_env - it prints the current environment.
+ * @info: It's the structure contains potential arguments.
  * Return: Always 0
  */
 int handle_env(info_t *info)
@@ -14,7 +13,7 @@ int handle_env(info_t *info)
 
 /**
  * _getenv - gets the value of an environ variable
- * @info: Structure containing potential arguments. Used to maintain
+ * @info: It's the structure contains potential arguments.
  * @name: env var name
  *
  * Return: the value
@@ -35,10 +34,9 @@ char *_getenv(info_t *info, const char *name)
 }
 
 /**
- * handle_setenv - Initialize a new environment variable,
- * or modify an existing one
- * @info: Structure containing potential arguments. Used to maintain
- * constant function prototype.
+ * handle_setenv - Start a new environment variable,
+ * or change an already existing one
+ * @info: It's the structure contains potential arguments.
  * Return: Always 0
  */
 int handle_setenv(info_t *info)
@@ -54,9 +52,8 @@ int handle_setenv(info_t *info)
 }
 
 /**
- * handle_unsetenv - Remove an environment variable
- * @info: Structure containing potential arguments. Used to maintain
- * constant function prototype.
+ * handle_unsetenv - It removes an environment variable
+ * @info: Structure contains potential arguments.
  * Return: Always 0
  */
 int handle_unsetenv(info_t *info)
@@ -76,9 +73,8 @@ int handle_unsetenv(info_t *info)
 
 
 /**
- * populate_env_list - populates env linked list
- * @info: Structure containing potential arguments. Used to maintain
- * constant function prototype.
+ * populate_env_list - It populates env linked list
+ * @info: The structure contains potential arguments.
  * Return: Always 0
  */
 int populate_env_list(info_t *info)
